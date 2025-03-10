@@ -3,6 +3,7 @@
 for mass in 075 080 085 090 100 110 120 130 140 150 160
 do
     echo $mass
+    rm -rf ChargedHiggsToCB_M${mass}_LO
     mkdir -p ChargedHiggsToCB_M${mass}_LO
     
     cp ChargedHiggsToCB_M120_run_card.dat ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_run_card.dat
@@ -13,5 +14,5 @@ do
     cp ChargedHiggsToCB_M120_proc_card.dat ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_proc_card.dat
     sed -i 's|output ChargedHiggsToCB_M120 -nojpeg|output ChargedHiggsToCB_M'"${mass}"' -nojpeg|g' ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_proc_card.dat
 
-
+    ../../../../../../gridpack_generation.sh ChargedHiggsToCB_M${mass} ChargedHiggsToCB_M${mass}_LO
 done

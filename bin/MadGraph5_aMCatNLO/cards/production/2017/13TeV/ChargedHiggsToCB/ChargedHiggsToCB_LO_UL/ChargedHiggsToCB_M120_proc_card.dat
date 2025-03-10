@@ -7,6 +7,6 @@ define l- = e- mu-
 define vl = ve vm
 define vl~ = ve~ vm~
 
-generate p p > t t~, ( t > h+ b, ( h+ > c b~ )), ( t~ > w- b~, ( w- > l- vl~ ))
+generate p p > h+, h+ > c b~
 
 output ChargedHiggsToCB_M120 -nojpeg
