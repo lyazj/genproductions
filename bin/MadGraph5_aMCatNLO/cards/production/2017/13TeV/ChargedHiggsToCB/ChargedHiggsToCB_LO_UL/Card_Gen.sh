@@ -14,5 +14,7 @@ do
     cp ChargedHiggsToCB_M120_proc_card.dat ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_proc_card.dat
     sed -i 's|output ChargedHiggsToCB_M120 -nojpeg|output ChargedHiggsToCB_M'"${mass}"' -nojpeg|g' ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_proc_card.dat
 
-    ../../../../../../gridpack_generation.sh ChargedHiggsToCB_M${mass} ChargedHiggsToCB_M${mass}_LO
+    pushd ../../../../../../
+    ./gridpack_generation.sh ChargedHiggsToCB_M${mass} $(readlink -f ChargedHiggsToCB_M${mass}_LO) &
 done
+wait
