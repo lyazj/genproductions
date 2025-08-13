@@ -42,9 +42,11 @@ make_tarball () {
     if [ -e merge.pl ]; then
         EXTRA_TAR_ARGS+="merge.pl "
     fi
-    XZ_OPT="$XZ_OPT" tar -cJpsf ${PRODHOME}/${name}_${scram_arch}_${cmssw_version}_tarball.tar.xz mgbasedir process runcmsgrid.sh gridpack_generation*.log InputCards $EXTRA_TAR_ARGS
+    #XZ_OPT="$XZ_OPT" tar -cJpsf ${PRODHOME}/${name}_${scram_arch}_${cmssw_version}_tarball.tar.xz mgbasedir process runcmsgrid.sh gridpack_generation*.log InputCards $EXTRA_TAR_ARGS
+    tar -cpsf ${PRODHOME}/${name}_${scram_arch}_${cmssw_version}_tarball.tar mgbasedir process runcmsgrid.sh gridpack_generation*.log InputCards $EXTRA_TAR_ARGS
 
-    echo "Gridpack created successfully at ${PRODHOME}/${name}_${scram_arch}_${cmssw_version}_tarball.tar.xz"
+    #echo "Gridpack created successfully at ${PRODHOME}/${name}_${scram_arch}_${cmssw_version}_tarball.tar.xz"
+    echo "Gridpack created successfully at ${PRODHOME}/${name}_${scram_arch}_${cmssw_version}_tarball.tar"
     echo "End of job"
 
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 0; else exit 0; fi
