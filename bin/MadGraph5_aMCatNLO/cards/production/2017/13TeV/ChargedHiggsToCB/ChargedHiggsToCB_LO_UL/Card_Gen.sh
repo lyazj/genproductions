@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for mass in 075 080 085 090 100 110 120 130 140 150 160
+for mass in 075 080 085 090 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250
 do
     echo $mass
     rm -rf ChargedHiggsToCB_M${mass}_LO
@@ -14,7 +14,7 @@ do
     cp ChargedHiggsToCB_M120_proc_card.dat ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_proc_card.dat
     sed -i 's|output ChargedHiggsToCB_M120 -nojpeg|output ChargedHiggsToCB_M'"${mass}"' -nojpeg|g' ChargedHiggsToCB_M${mass}_LO/ChargedHiggsToCB_M${mass}_proc_card.dat
 
-    CMD="./gridpack_generation.sh ChargedHiggsToCB_M${mass} cards/production/2017/13TeV/ChargedHiggsToCB/ChargedHiggsToCB_LO_UL/ChargedHiggsToCB_M${mass}_LO"
+    CMD="cmssw-el7 --command-to-run bash gridpack_generation.sh ChargedHiggsToCB_M${mass} cards/production/2017/13TeV/ChargedHiggsToCB/ChargedHiggsToCB_LO_UL/ChargedHiggsToCB_M${mass}_LO"
     pushd ../../../../../../
     ${CMD} &
     popd
