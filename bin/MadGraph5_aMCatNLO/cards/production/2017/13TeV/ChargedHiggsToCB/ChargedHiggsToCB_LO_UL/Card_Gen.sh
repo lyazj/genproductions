@@ -16,6 +16,7 @@ do
 
     CMD="cmssw-el7 --command-to-run bash gridpack_generation.sh ChargedHiggsToCB_M${mass} cards/production/2017/13TeV/ChargedHiggsToCB/ChargedHiggsToCB_LO_UL/ChargedHiggsToCB_M${mass}_LO"
     pushd ../../../../../../
-    ${CMD}
+    ${CMD} &
     popd
 done
+wait
