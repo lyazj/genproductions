@@ -7,6 +7,15 @@ define l- = e- mu-
 define vl = ve vm
 define vl~ = ve~ vm~
 
-generate p p > h+ j, h+ > c b~
+generate    p p > h+, h+ > c b~
+add process p p > h-, h- > c~ b
+add process p p > h+ j, h+ > c b~
+add process p p > h- j, h- > c~ b
+add process p p > h+ j j, h+ > c b~
+add process p p > h- j j, h- > c~ b
+add process p p > h+ j j j, h+ > c b~
+add process p p > h- j j j, h- > c~ b
+add process p p > h+ j j j j, h+ > c b~
+add process p p > h- j j j j, h- > c~ b
 
 output ChargedHiggsToCB_M120 -nojpeg
